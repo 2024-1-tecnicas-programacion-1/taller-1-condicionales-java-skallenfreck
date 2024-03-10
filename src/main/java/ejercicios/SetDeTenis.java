@@ -10,28 +10,25 @@ public class SetDeTenis {
 
     public static String evaluar(int numVictoriasA, int numVictoriasB) {
 
-        if (numVictoriasA < 7 && numVictoriasB < 7 && Math.abs(numVictoriasA - numVictoriasB) < 2) {
-            return "Aún no termina";
-        } else if (numVictoriasA == 7 && numVictoriasB == 0) {
-            return "Ganó A";
-
-        } else if (numVictoriasA == 0 && numVictoriasB == 7) {
-            return "Ganó B";
-        } else if ((numVictoriasB <= numVictoriasA - 2) && (numVictoriasA > numVictoriasB) && (numVictoriasA <= 6)) {
-            return "Ganó A";
-        } else if ((numVictoriasA <= numVictoriasB - 2) && (numVictoriasB > numVictoriasA) && (numVictoriasB <= 6)) {
-            return "Ganó B";
-        } else if ((5 <= numVictoriasA) && (numVictoriasA <= 7) && (5 <= numVictoriasB) && (numVictoriasB <= 7)) {
-            if ((numVictoriasA - 1 > numVictoriasB)) {
+        if (numVictoriasA > 7 || numVictoriasB > 7) {
+            return "Inválido";
+        } else if ((numVictoriasA == 7 || numVictoriasB == 7) && (Math.abs(numVictoriasA - numVictoriasB) > 2) || Math.abs(numVictoriasA - numVictoriasB) == 0) {
+            return "Inválido";
+        } else if ((numVictoriasA == 6 || numVictoriasB == 6) && Math.abs(numVictoriasA - numVictoriasB) >= 2) {
+            if (numVictoriasA - numVictoriasB > 0) {
                 return "Ganó A";
-            } else if (numVictoriasB - 1 > numVictoriasA) {
+            } else if (numVictoriasB - numVictoriasA > 0) {
                 return "Ganó B";
             }
-        } else if (((numVictoriasA >= 7) && (numVictoriasB < 7)) || ((numVictoriasB >= 7) && (numVictoriasA < 7))) {
-            return "Inválido";
+        } else if (numVictoriasA == 7 || numVictoriasB == 7) {
+            if (numVictoriasA == 7) {
+                return "Ganó A";
+            } else if (numVictoriasB == 7) {
+                return "Ganó B";
+            }
 
         }
-        return "";
+        return"Aún no termina";
     }
 
     public static void main(String[] args) {

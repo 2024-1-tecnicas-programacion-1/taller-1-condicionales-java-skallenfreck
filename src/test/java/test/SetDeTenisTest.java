@@ -72,8 +72,8 @@ public class SetDeTenisTest {
     }
 
     @Test
-    public void testGanoA2() {
-        String valorEsperado = "Ganó A";
+    public void testInvalido4() {
+        String valorEsperado = "Inválido";
         String valorActual = SetDeTenis.evaluar(7, 0);
         assertEquals(valorEsperado, valorActual);
     }

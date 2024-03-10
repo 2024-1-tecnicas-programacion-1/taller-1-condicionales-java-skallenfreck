@@ -59,11 +59,13 @@ public class AnnosBisiestosTest {
     String valorActual= AnnosBisiestos.evaluar(2404);
     assertEquals(valorEsperado, valorActual);
     }
+    
     @Test void test2100(){
     String valorEsperado="2100 no es bisiesto";
     String valorActual= AnnosBisiestos.evaluar(2100);
     assertEquals(valorEsperado, valorActual);
     }
+    
     @Test void test2200(){
     String valorEsperado="2200 no es bisiesto";
     String valorActual= AnnosBisiestos.evaluar(2200);
